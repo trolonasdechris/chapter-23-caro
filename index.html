@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caro's Constellation ✦</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/extras.css"></head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas><div class="aurora" aria-hidden="true"></div>
+<div id="progress"></div>
+<nav id="nav"><button id="burger" aria-label="Menú">☰</button><div id="links">
+<a href="#portada">Inicio</a><a href="#cartas">Cartas</a><a href="#recuerdos">Recuerdos</a><a href="#musica">Banda sonora</a><a href="#mensajes">Mensajes</a><a href="#final">Final</a></div></nav>
+<header id="portada" class="sec hero">
+<h1>Chapter 23:<br>A Sky Full of Memories</h1><h2>¡Felices 23 años, Caro!</h2>
+<p id="frase"></p><p class="ded">Con todo el cariño de tus tres trolonas</p>
+<button class="btn" id="start">Descubre tu constelación ✨</button></header>
+<main id="universo">
+<section id="cartas" class="sec"><h2>Tres cartas, tres corazones</h2><p class="sub">Toca un sobre para abrirlo.</p><div id="foxInv"></div><div id="sobres" class="row"></div></section>
+<section id="recuerdos" class="sec"><h2>Nuestra constelación de recuerdos</h2><p class="sub">Cada estrella es un recuerdo. Sigue la luz.</p><div id="constel"></div></section>
+<section id="musica" class="sec"><h2>Su banda sonora</h2><div class="radio"><div class="disc"></div><div><p id="musicaTxt"></p><div id="spotify"></div></div></div></section>
+<section id="mensajes" class="sec"><h2>Mensajes que llegan desde otros universos</h2><p class="sub">Toca un sobre flotante.</p><div id="msgs" class="row"></div></section>
+<section id="final" class="sec"><h2>Un mensaje de nosotras para ti</h2><p id="mensajeJunto" class="long"></p>
+<div id="videoBox"></div><p id="felicitacion" class="big"></p><button class="btn" id="celebrar">🎉 Celebrar</button></section>
+</main>
+<span id="secretStar" title="✦">✦</span>
+<div id="fox" role="button" aria-label="Zelev, el zorrito"></div><div id="bubble"></div><button id="hideFox" title="Ocultar a Zelev">🦊✕</button>
+<div id="modal" hidden><div class="card"><button class="x" id="close" aria-label="Cerrar">✕</button><div id="modalBody"></div></div></div>
+<button id="top" aria-label="Volver al inicio">↑</button>
+<script src="js/data.js"></script><script src="js/zorrito.js"></script><script src="js/dragon.js"></script><script src="js/main.js"></script><script src="js/extras.js"></script>
+</body></html>

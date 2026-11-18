@@ -1,0 +1,62 @@
+.sec{position:relative}
+.sec::before{content:"";position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--tur),transparent)}
+@keyframes au{to{transform:translateY(-4%) scale(1.08)}}.aurora{filter:hue-rotate(var(--hue,0deg));transition:filter 1.8s}
+#planets{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.pl{position:absolute;border-radius:50%;display:block;transition:transform .3s linear}
+.p1{width:120px;height:120px;left:6%;top:62%;background:radial-gradient(circle at 30% 30%,#b48bff,#3b1a78 70%);box-shadow:0 0 40px #5b2a9e88;opacity:.55}
+.p1::after{content:"";position:absolute;left:-30%;right:-30%;top:42%;height:16%;border:2px solid #ffe3a188;border-radius:50%;transform:rotate(-18deg)}
+.p2{width:70px;height:70px;right:8%;top:20%;background:radial-gradient(circle at 30% 30%,#7ff5e8,#0f6f77 70%);opacity:.5;box-shadow:0 0 30px #2de2d066}
+.moon{width:46px;height:46px;right:22%;top:72%;background:radial-gradient(circle at 35% 35%,#fff,#aab3d6 70%);opacity:.45}
+.shoot{position:fixed;z-index:-1;width:120px;height:2px;background:linear-gradient(90deg,#fff,transparent);transform:rotate(25deg);animation:sh 1.2s ease-out forwards;pointer-events:none}
+@keyframes sh{from{translate:0 0;opacity:1}to{translate:-420px 200px;opacity:0}}
+/* sobre con solapa */
+.oe{position:relative;margin:70px 0 18px;perspective:700px}
+.oe .flap{position:absolute;left:0;right:0;top:-50px;height:50px;background:var(--c,#7a4fd0);clip-path:polygon(0 100%,50% 0,100% 100%);transform-origin:50% 100%;animation:fp .7s forwards}
+@keyframes fp{from{transform:rotateX(0)}to{transform:rotateX(180deg);opacity:.3}}
+.oe .paper{animation:pp .9s .5s both}@keyframes pp{from{transform:translateY(80px) scale(.8);opacity:0}}
+/* zorrito */
+#fox.walk{animation:wk 7s ease-in-out}@keyframes wk{0%,100%{translate:0 0}25%{translate:-18vw -6px}35%{translate:-18vw 0}50%{translate:-38vw -6px}60%{translate:-38vw 0}80%{translate:-18vw -6px}}
+#fox.walk svg{animation:bob .35s infinite alternate}@keyframes bob{to{transform:translateY(-4px) rotate(2deg)}}
+#fox .zz{display:none}#fox.sleep .zz{display:block}#fox.sleep{animation:none;filter:brightness(.8)}#fox.sleep .tail{animation:none}
+#fox.sleep::after{content:"💤";position:absolute;top:-14px;right:0;animation:fl 2s infinite}
+#foxInv{width:70px;height:70px;margin:8px auto 0;cursor:pointer;animation:fl 3s infinite}
+/* secretos */
+.egg{font-size:2rem;background:#0b123399;border:1px solid #5ad1ff55;border-radius:16px;width:74px;height:74px;cursor:pointer;transition:transform .3s}
+.egg:hover{transform:rotate(12deg) scale(1.15)}.egg.found{box-shadow:0 0 20px var(--tur);border-color:var(--tur)}
+#dragonBg{position:absolute;right:2%;top:6%;width:200px;opacity:.22;z-index:-1;animation:fl 6s infinite;pointer-events:none}
+.mm{width:100%;border-radius:10px;margin:8px 0}.empty{opacity:.6;font-style:italic}
+.cover{width:150px;height:150px;border-radius:14px;object-fit:cover;box-shadow:0 0 30px var(--vio)}
+.waves{display:flex;gap:4px;align-items:flex-end;height:30px;margin:10px 0}.waves i{width:5px;background:var(--tur);animation:wv 1s infinite alternate;border-radius:3px}
+@keyframes wv{from{height:6px}to{height:30px}}
+@media(max-width:700px){.p1{width:80px;height:80px}#dragonBg{width:120px}}
+/* Auroras boreales visibles */
+.aurora{overflow:hidden}
+.aurora::before,.aurora::after{content:"";position:absolute;left:-25%;right:-25%;top:-5%;height:75%;mix-blend-mode:screen;-webkit-mask-image:linear-gradient(#000 25%,transparent);mask-image:linear-gradient(#000 25%,transparent)}
+.aurora::before{background:repeating-linear-gradient(98deg,transparent 0 30px,#2de2d099 70px,#3ddc97cc 120px,transparent 190px);filter:blur(18px);opacity:.75;animation:cur 11s ease-in-out infinite alternate}
+.aurora::after{background:repeating-linear-gradient(82deg,transparent 0 50px,#7a4fd0aa 100px,#5ad1ffaa 150px,transparent 230px);filter:blur(26px);opacity:.7;animation:cur 15s 2s ease-in-out infinite alternate-reverse}
+@keyframes cur{0%{transform:translateX(-7%) skewX(-10deg) scaleY(.85)}100%{transform:translateX(7%) skewX(10deg) scaleY(1.3)}}
+#dragon{width:260px}#dragon img,#dragonBg img{width:100%;display:block;filter:drop-shadow(0 0 16px #2de2d0aa)}
+#dragon.in img{animation:fl 3s infinite}
+#secretStar{font-size:2.3rem;opacity:1;color:var(--oro);text-shadow:0 0 14px var(--oro),0 0 34px #fff8;animation:tw 1.8s ease-in-out infinite}
+@keyframes tw{50%{transform:scale(1.35) rotate(25deg);text-shadow:0 0 24px var(--oro),0 0 60px #fff}}
+/* Chimuelo sentado sobre la tarjeta */
+.chim{display:block;width:110px;margin:-6px auto 6px;filter:drop-shadow(0 0 14px #2de2d0aa);animation:drop .8s cubic-bezier(.3,1.5,.5,1) both,fl 4s 1s ease-in-out infinite}
+@keyframes drop{from{transform:translateY(-120px) scale(.7);opacity:0}}
+#dragonBg{top:auto;bottom:24px;right:5%;width:120px;opacity:.5;animation:none;filter:drop-shadow(0 0 12px #2de2d088)}
+#dragonBg img{width:100%}
+.pl,#planets{display:none}
+/* Títulos con ornamento de constelación */
+.sec h2::after{content:"";display:block;height:28px;width:190px;margin:10px auto 0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 190 28'%3E%3Cpolyline points='6,20 44,8 82,18 120,6 150,16 184,10' fill='none' stroke='%235ad1ff' stroke-opacity='.6'/%3E%3Cg fill='%23fff'%3E%3Ccircle cx='6' cy='20' r='2.5'/%3E%3Ccircle cx='44' cy='8' r='3'/%3E%3Ccircle cx='82' cy='18' r='2.5'/%3E%3Ccircle cx='150' cy='16' r='2.5'/%3E%3Ccircle cx='184' cy='10' r='2.5'/%3E%3C/g%3E%3Ccircle cx='120' cy='6' r='4' fill='%23ffe3a1'/%3E%3C/svg%3E") center/contain no-repeat}
+.hero h2::after{display:none}
+/* Ajustes */
+#secretStar{display:block;position:absolute;top:40%;left:90%;bottom:auto;z-index:6;line-height:1}
+#dragonBg{top:5%;bottom:auto;right:4%}
+.big{color:#e9fffb;text-shadow:0 0 18px #2de2d066}
+.spph{border:2px dashed #5ad1ff88;border-radius:14px;padding:30px 20px;min-height:150px;display:grid;place-items:center;opacity:.85}
+.sl{color:var(--tur);font-weight:800}
+/* Ajustes v6 */
+#dragonBg{display:none}
+.chim{margin:-6px 4px 6px auto}
+.radio>div:last-child{text-align:center}.waves{justify-content:center}
+/* v7: .card img (styles.css) tenía más especificidad y anulaba el margen de Chimuelo */
+.card img.chim{display:block;margin:-6px 4px 6px auto;border-radius:0}
